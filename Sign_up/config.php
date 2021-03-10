@@ -1,16 +1,19 @@
 <?php
+/*
+This file contains database configuration assuming you are running mysql using user "root" and password ""
+*/
 
-define('DB_server','localhost');
-define('DB_username','root');
-define('DB_password','');
-define('DB_name','login');
-// connecct to datbabse
-$connect = mysqli_connect(DB_server,DB_username,DB_password,DB_name);
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'login');
 
-// check the conn
-if($connect == false){
-    dir('Err: cant connect');
+// Try connecting to the Database
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+//Check the connection
+if($conn == false){
+    dir('Error: Cannot connect');
 }
-
 
 ?>
